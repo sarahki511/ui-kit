@@ -1,3 +1,8 @@
+# Project Overview
+
+This project was carried out with the goal of making a ui kit (like that of bootstarp, materialUI, etc).\
+I divided each tasks into their own components.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
