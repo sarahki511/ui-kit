@@ -1,0 +1,47 @@
+@import "./../../scss/global";
+
+.Button {
+  background-color: $primary;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  border: none;
+  color: $white;
+
+
+  @each $state, $color in $primary_states {
+    @if $state == "focus" {
+      &_state_#{$state} {
+        background-color: $color;
+        border: solid 2px mix(white, $color, 50%);
+      }
+    }
+    &_state_#{$state} {
+      background-color: $color;
+    }
+  }
+
+  @each $name, $value in $btn-paddings {
+    &_#{$name} {
+      @each $n, $v in $value {
+        @if $n == "x" {
+          padding-left: $v;
+          padding-right: $v;
+        }
+        @if $n == "y" {
+          padding-top: $v;
+          padding-bottom: $v;
+        }
+      }
+    }
+  }
+
+  @each $name, $value in $all_border_radius {
+    &_borderRadius_#{$name} {
+      border-radius: $value;
+    }
+  }
+
+
+}

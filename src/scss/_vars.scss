@@ -1,0 +1,147 @@
+@import "functions";
+// Theme Colours
+$primary: #5583BA;
+$secondary: #898e8c;
+$success: #30D5C8;
+$info: #FFA500;
+$warning: #f1dd38;
+$danger: #d73b3e;
+$light: #fffff0;
+$dark: #614e6e;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+$primary-100: tint($primary, 80%);
+$primary-200: tint($primary, 60%);
+$primary-300: tint($primary, 40%);
+$primary-400: tint($primary, 20%);
+$primary-500: $primary;
+$primary-600: shade($primary, 20);
+$primary-700: shade($primary, 40);
+$primary-800: shade($primary, 50);
+$primary-900: shade($primary, 60);
+
+$primary_shades: (
+  "primary-100": $primary-100,
+  "primary-200": $primary-200,
+  "primary-300": $primary-300,
+  "primary-400": $primary-400,
+  "primary-500": $primary-500,
+  "primary-600": $primary-600,
+  "primary-700": $primary-700,
+  "primary-800": $primary-800,
+  "primary-900": $primary-900,
+);
+
+$primary_states: (
+  "default": $primary-500,
+  "active": $primary-700,
+  "hover": $primary-600,
+  "focus": $primary-400,
+  "disabled": $primary-200
+);
+
+$secondary-100: tint($secondary, 80%);
+$secondary-200: tint($secondary, 60%);
+$secondary-300: tint($secondary, 40%);
+$secondary-400: tint($secondary, 20%);
+$secondary-500: $secondary;
+$secondary-600: shade($secondary, 20);
+$secondary-700: shade($secondary, 40);
+$secondary-800: shade($secondary, 50);
+$secondary-900: shade($secondary, 60);
+
+$secondary_shades: (
+  "secondary-100": $secondary-100,
+  "secondary-200": $secondary-200,
+  "secondary-300": $secondary-300,
+  "secondary-400": $secondary-400,
+  "secondary-500": $secondary-500,
+  "secondary-600": $secondary-600,
+  "secondary-700": $secondary-700,
+  "secondary-800": $secondary-800,
+  "secondary-900": $secondary-900,
+);
+
+$secondary_states: (
+  "default": $secondary-500,
+  "active": $secondary-700,
+  "hover": $secondary-600,
+  "focus": $secondary-400,
+  "disabled": $secondary-200
+);
+
+// Other Colors
+$red: rgb(213, 35, 35);
+$white: #fff;
+
+// spacing
+$base-spacing: 20px;
+$half-spacing: $base-spacing/2;
+
+// breakpoints
+$breakpoints: (
+  "xs": 374px,
+  "sm": 420px,
+  "md": 768px,
+  "lg": 990px,
+  "xl": 1200px,
+  "xxl": 1600px,
+);
+
+$justifyContent: (
+  flex-start, flex-end, center, space-between
+);
+
+$alignItems: (
+  flex-start, flex-end, center
+);
+
+$border-radius-sm: .25rem !default;
+$border-radius-md: .375rem !default;
+$border-radius-lg: .5rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-xxl: 2rem !default;
+$border-radius-pill: 50rem !default;
+
+$btn-padding-y-sm: .25rem !default;
+$btn-padding-x-sm: .5rem !default;
+
+$btn-padding-y-md: .375rem !default;
+$btn-padding-x-md: .75rem !default;
+
+$btn-padding-y-lg: .5rem !default;
+$btn-padding-x-lg: 1rem !default;
+
+$btn-paddings: (
+  "sm": (
+    "y": $btn-padding-y-sm, 
+    "x": $btn-padding-x-sm
+  ),
+  "md": (
+    "y": $btn-padding-y-md, 
+    "x": $btn-padding-x-md
+  ),
+  "lg": (
+    "y": $btn-padding-y-lg, 
+    "x": $btn-padding-x-lg
+  )
+);
+
+$all_border_radius: (
+  "sm": $border-radius-sm,
+  "md": $border-radius-md,
+  "lg": $border-radius-lg,
+  "xl": $border-radius-xl,
+  "xxl": $border-radius-xxl,
+  "pill": $border-radius-pill
+);
