@@ -1,38 +1,29 @@
 import React from 'react';
 import Button from './Button'
-import Grid from '../Grid/Grid';
+import { withKnobs } from "@storybook/addon-controls"
+
 
 
 export default {
-  title: 'Button',
+  title: 'Components/UI Elements/Button',
   component: Button,
+  argTypes: {
+    children: { control: 'text' },
+    state: { control: 'select', options: ["default", "hover", "active", "focus", "disabled"]},
+    size: { control: 'radio', options: ["sm", "md", "lg"]},
+    borderRadius: { control: 'select', options: ["sm", "md", "lg", "xl", "xxl", "pill"]},
+    iconInFront: { control: 'boolean' }
+  },
 };
 
 
 
 
-export const Basic = (args) =>
-  <div style={{ position: "relative" }}>
-    <h1>Buttons</h1>
-    <h2>Primary</h2>
-    <Grid container spacing="sm" justifyContent="flex-start" alignItems="flex-start" style={{ height: '20%' }}>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <h3>Label</h3>
+export const ButtonWithIcon = (args) =>
+<>
+  <Button {...args}/>
+  {''} <Button state="default" size="lg" borderRadius="md" icon="info" pos="front"></Button>{' '}
+  <Button state="default" size="md" theme="secondary" borderRadius="md" icon="info" iconInFront outline>Button</Button>
+</>;
 
-        <Button state="default" size="lg" borderRadius="sm"> Button </Button>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <Button state="active" size="lg" borderRadius="sm"> Button </Button>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <Button state="hover" size="lg" borderRadius="sm"> Button </Button>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <Button state="focus" size="lg" borderRadius="sm"> Button </Button>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-        <Button state="disabled" size="lg" borderRadius="sm"> Button </Button>
-      </Grid>
-    </Grid>
-  </div>;
-;
+ButtonWithIcon.args = { children:"Button",  state:"default", size:"md", borderRadius:"md", icon:"info", iconInFront:false};

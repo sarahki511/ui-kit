@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Grid.module.scss'
-import cn from 'classnames'
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 const cols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

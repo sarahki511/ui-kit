@@ -1,23 +1,38 @@
 @import "./../../scss/global";
 
 .Button {
+  display: inline-block;
+  line-height: initial;
   background-color: $primary;
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $base-font-weight;
-  line-height: $base-line-height;
+  letter-spacing: .5px;
   border: none;
   color: $white;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
 
+  cursor: pointer;
+
+  @each $theme, $color in $theme-colors {
+    &_#{$theme} {
+      border: solid 2px $color;
+      background-color: $color;
+    }
+  }
+
+  &_disabled {
+    background-color: map-get($primary_states, "disabled");
+    cursor: not-allowed;
+    pointer-events:none;
+  }
 
   @each $state, $color in $primary_states {
-    @if $state == "focus" {
-      &_state_#{$state} {
-        background-color: $color;
-        border: solid 2px mix(white, $color, 50%);
-      }
-    }
-    &_state_#{$state} {
+    &:#{$state} {
       background-color: $color;
     }
   }

@@ -6,7 +6,7 @@ import GridRuler from '../GridRuler/GridRuler'
 
 
 export default {
-  title: 'Grid',
+  title: 'Components/Layout/Grid',
   component: Grid,
 };
 
