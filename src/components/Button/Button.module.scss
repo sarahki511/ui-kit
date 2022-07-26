@@ -1,4 +1,4 @@
-@import "./../../scss/global";
+@import './../../scss/global';
 
 .Button {
   display: inline-block;
@@ -7,7 +7,7 @@
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $base-font-weight;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   border: none;
   color: $white;
   vertical-align: middle;
@@ -15,36 +15,60 @@
   justify-content: center;
   text-align: center;
   white-space: nowrap;
-
+  height: 2.5rem;
   cursor: pointer;
 
   @each $theme, $color in $theme-colors {
     &_#{$theme} {
       border: solid 2px $color;
       background-color: $color;
+      @if $theme == 'primary-outline' or $theme == 'secondary-outline' {
+        color: $color;
+        background-color: transparent;
+      }
+      @if $theme == 'light' or $theme == 'warning' {
+        color: $text-color;
+      }
+      @each $state, $color in map-get($theme-states, $theme) {
+        &:#{$state} {
+          background-color: $color;
+          border-color: $color;
+          @if $theme == 'light' {
+            color: $dark;
+          }
+          @if $state == 'disabled' {
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+          @if $theme == 'primary-outline' or $theme == 'secondary-outline' {
+            color: $white;
+            background-color: $color;
+          }
+        }
+      }
     }
   }
 
-  &_disabled {
-    background-color: map-get($primary_states, "disabled");
+  &_diabled {
     cursor: not-allowed;
-    pointer-events:none;
-  }
-
-  @each $state, $color in $primary_states {
-    &:#{$state} {
-      background-color: $color;
-    }
+    pointer-events: none;
   }
 
   @each $name, $value in $btn-paddings {
     &_#{$name} {
+      @if $name == 'sm' {
+        height: 1.8rem;
+      }
+      @if $name == 'lg' {
+        height: 3.25rem;
+        font-size: 1.2rem;
+      }
       @each $n, $v in $value {
-        @if $n == "x" {
+        @if $n == 'x' {
           padding-left: $v;
           padding-right: $v;
         }
-        @if $n == "y" {
+        @if $n == 'y' {
           padding-top: $v;
           padding-bottom: $v;
         }
@@ -57,6 +81,4 @@
       border-radius: $value;
     }
   }
-
-
 }

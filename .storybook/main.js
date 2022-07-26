@@ -8,7 +8,8 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
-    "@storybook/addon-controls"
+    "@storybook/addon-controls",
+    "@storybook/addon-docs"
   ],
   "framework": "@storybook/react",
   "core": {

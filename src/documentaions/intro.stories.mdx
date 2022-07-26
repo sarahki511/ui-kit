@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs';
+import './documentation.scss';
+import Grid from '../components/Grid/Grid';
+
+<Meta
+  title="Getting Started/Introduction"
+  parameters={{ fullPage: true, previewTabs: { canvas: { hidden: true } } }}
+/>
+
+<div className="container">
+  <Grid container spacing="xs">
+    <Grid item xs={10} sm={6} md={6} lg={5}>
+      <h1>UI KIT</h1>
+      <p>
+        This User Interface Kit provides you with consistent guidelines,
+        components and templates to boost the user experience of your products.
+      </p>
+    </Grid>
+  </Grid>
+  <Grid container spacing="xs">
+    <Grid item xs={8} sm={8} md={8} lg={8} justifyContent="center">
+      <h2>About</h2>
+      <p>
+        UI Kit is the best way to unify web design and strengthen brand image.
+        This free UI Kit will help you create a unified website using easy to use
+        small components.
+      </p>
+    </Grid>
+    <Grid item xs={8} sm={8} md={8} lg={8}>
+      <h2>Purpose</h2>
+      <p>
+        The purpose of this project is to create a unified toolkit that is used by UX-designers and developers on their projects alike to ensure all WFP-branded projects are accessible, appealing and have a consistent look and feel across the board by following WFP’s design and implementation guidelines.The guidelines contained in this guide are to be applied to all WFP's digital products such as websites, web applications, internal systems and other.</p>
+    </Grid>
+    <Grid item xs={8} sm={8} md={8} lg={8}>
+      <h2>Toolkit</h2>
+      <p>
+        By unifiying design elements into reusable components, development will simplify and accelerate the development of these digital products.The guide is a living document created to meet the needs of front-end developers and designers. If there is a component or pattern you need or you have any other feedback, question or comment please contact me.</p>
+    </Grid>
+
+  </Grid>
+</div>
