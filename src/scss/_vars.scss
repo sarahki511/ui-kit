@@ -293,6 +293,17 @@ $theme-states: (
   'dark': $dark_states,
 );
 
+$color-shades: (
+  'primary': $primary_shades,
+  'secondary': $secondary_shades,
+  'success': $success_shades,
+  'info': $info_shades,
+  'warning': $warning_shades,
+  'danger': $danger_shades,
+  'light': $light_shades,
+  'dark': $dark_shades,
+);
+
 // Other Colors
 $red: rgb(213, 35, 35);
 $white: #fff;
@@ -301,6 +312,16 @@ $text-color: #1d1d1f;
 // spacing
 $base-spacing: 20px;
 $half-spacing: $base-spacing/2;
+
+$spacer: 1rem !default;
+$spacers: (
+  'xxs': 0,
+  'xs': $spacer * 0.25,
+  'sm': $spacer * 0.5,
+  'md': $spacer,
+  'lg': $spacer * 1.5,
+  'xl': $spacer * 3,
+) !default;
 
 // breakpoints
 $breakpoints: (

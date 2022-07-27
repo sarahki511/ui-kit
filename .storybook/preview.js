@@ -9,6 +9,11 @@ export const parameters = {
     },
     expanded: true,
   },
+  options: {
+    storySort: {
+      order: ['Getting Started', 'Documentation', 'Example', 'Components'],
+    },
+  },
 };
 
 import './reset.css';

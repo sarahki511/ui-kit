@@ -1,0 +1,29 @@
+@import './../../scss/global';
+
+.Tag {
+  display: inline-flex;
+  align-items: center;
+  padding: map-get($spacers, 'sm') map-get($spacers, 'md');
+  height: 1.5rem;
+  margin: map-get($spacers, 'xs');
+  white-space: nowrap;
+  border-radius: 50rem;
+  font-family: $base-font-family;
+  font-size: 0.75rem;
+  font-weight: 300;
+  &_wrap {
+    white-space: normal;
+  }
+  &:not(:first-child) {
+    margin-left: 0;
+  }
+  @each $theme, $color in $theme-colors {
+    &_#{$theme} {
+      // @include colorSet($theme, $color);
+      color: $color;
+      // $theme-color: map-get($color-shades, $theme);
+      // background-color: map-get($theme-color, '#{$theme}-200');
+      // background-color: aquamarine;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import './../../scss/global';
+
+.Badge {
+  display: inline-flex;
+  align-items: center;
+  padding: map-get($spacers, 'sm') map-get($spacers, 'md');
+  height: 1.5rem;
+  margin: map-get($spacers, 'xs');
+  white-space: nowrap;
+  border-radius: 50rem;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 300;
+  &_wrap {
+    white-space: normal;
+  }
+  &:not(:first-child) {
+    margin-left: 0;
+  }
+  @each $theme, $color in $theme-colors {
+    &_#{$theme} {
+      @if $theme == 'primary' {
+        background-color: $color;
+        color: $light;
+        border: solid 1.5px $color;
+      } @else {
+        background-color: $light;
+        color: $color;
+        border: solid 1.5px $color;
+      }
+    }
+    &_shadow {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 15px 0 rgba(0, 0, 0, 0.19);
+      border-color: transparent;
+    }
+  }
+}
