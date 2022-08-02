@@ -3,7 +3,7 @@
 .Tag {
   display: inline-flex;
   align-items: center;
-  padding: map-get($spacers, 'sm') map-get($spacers, 'md');
+  padding: map-get($spacers, 'sm') map-get($spacers, 'sm');
   height: 1.5rem;
   margin: map-get($spacers, 'xs');
   white-space: nowrap;
@@ -17,13 +17,10 @@
   &:not(:first-child) {
     margin-left: 0;
   }
-  @each $theme, $color in $theme-colors {
+  @each $theme, $shades in $color-shades {
     &_#{$theme} {
-      // @include colorSet($theme, $color);
-      color: $color;
-      // $theme-color: map-get($color-shades, $theme);
-      // background-color: map-get($theme-color, '#{$theme}-200');
-      // background-color: aquamarine;
+      color: map-get($shades, '#{$theme}-600');
+      background-color: map-get($shades, '#{$theme}-100');
     }
   }
 }

@@ -28,40 +28,34 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
-    shadow: {
-      control: 'boolean',
-      description: 'Optional prop to specify whether Tag will have box shadow',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
   },
 };
 
-const btnTypes = ['primary', 'primary-outline'];
+const tagTypes = ['info', 'danger', 'success', 'warning', 'light', 'dark'];
 
-export const TagWithIcon = (args) => (
+export const TagBasic = (args) => (
   <>
     <Tag {...args} />
-    <Tag type="danger">Tag</Tag>
-    <Tag type="warning" shadow>
+    <Tag type="success">Tag</Tag>
+    <Tag type="danger" shadow>
       Tag
     </Tag>
   </>
 );
 
-TagWithIcon.args = {
+TagBasic.args = {
   children: 'Tag',
   type: 'info',
 };
 
 export const TagTypes = (args) => (
   <>
-    {btnTypes.map((e) => (
+    {tagTypes.map((e) => (
       <div
         style={{
           display: 'inline-block',
-          padding: '0.3rem',
+          background: e === 'light' ? '#614e6e' : '',
+          padding: '0.2rem',
         }}
       >
         <Tag {...args} type={e}>
@@ -79,8 +73,12 @@ TagTypes.args = {
 const typesDesc = `
 | Type | Description |
 | ---- | ----------- |
-| \`primary\` | Fill Tag with primary color |
-| \`primary-outline\` | Primary color border with light fill |
+| \`info\` | Fill Tag with primary color |
+| \`danger\` | Primary color border with light fill |
+| \`success\` | Fill Tag with primary color |
+| \`warning\` | Primary color border with light fill |
+| \`light\` | Fill Tag with primary color |
+| \`dark\` | Primary color border with light fill |
 `;
 
 TagTypes.story = {
@@ -92,13 +90,13 @@ TagTypes.story = {
   },
 };
 
-export const TagShadow = (args) => (
-  <>
-    <Tag type="primary" shadow>
-      Tag
-    </Tag>
-    <Tag type="primary-outline" shadow>
-      Tag
-    </Tag>
-  </>
-);
+// export const TagShadow = (args) => (
+//   <>
+//     <Tag type="primary" shadow>
+//       Tag
+//     </Tag>
+//     <Tag type="primary-outline" shadow>
+//       Tag
+//     </Tag>
+//   </>
+// );

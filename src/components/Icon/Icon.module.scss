@@ -16,6 +16,7 @@
   speak: never;
   font-style: normal;
   font-weight: normal;
+  font-size: 100%;
   font-variant: normal;
   text-transform: none;
   line-height: initial;
@@ -29,6 +30,9 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // &_size {
+  //   font-size: 100% *
+  // }
 
   &_front {
     margin-right: 0.25rem;

@@ -1,0 +1,34 @@
+@import './../../scss/global';
+
+.link-hover {
+  text-decoration: underline;
+}
+
+.Link {
+  color: $primary;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover,
+  &_link-hover {
+    text-decoration: underline;
+  }
+  &:visited,
+  &_link-visited {
+    color: map-get($primary_shades, 'primary-900');
+  }
+  &:active,
+  &:hover,
+  &:focus,
+  &_link-active,
+  &_link-focus,
+  &_link-active {
+    color: map-get($primary_states, 'focus');
+  }
+  &[aria-disabled='true'] {
+    color: map-get($primary_states, 'disabled');
+    pointer-events: none;
+  }
+  &_inline {
+    text-decoration: underline;
+  }
+}

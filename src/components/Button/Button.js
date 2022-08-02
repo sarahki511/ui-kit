@@ -4,10 +4,21 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 
+/**
+ * premade/ default sizes of the button
+ */
 const sizes = ['sm', 'md', 'lg'];
+/**
+ * Determines the roundness of the button
+ */
 const radius = ['sm', 'md', 'lg', 'xl', 'xxl', 'pill'];
-const states = ['default', 'hover', 'active', 'focus', 'disabled'];
+/**
+ * HTML type attribute
+ * */
 const type = ['submit', 'reset', 'button'];
+/**
+ * types of themes available for users to use
+ */
 const theme = [
   'primary',
   'primary-outline',
@@ -22,23 +33,51 @@ const theme = [
 ];
 
 Component.propTypes = {
+  /**
+   * content of the component
+   */
   children: PropTypes.string,
+  /**
+   * select of the theme of the button
+   */
   theme: PropTypes.oneOf(theme),
-  state: PropTypes.oneOf(states),
+  /**
+   * size of the button
+   */
   size: PropTypes.oneOf(sizes),
+  /**
+   * roundness of button
+   */
   borderRadius: PropTypes.oneOf(radius),
+  /**
+   * determines wheter the button will be disabled or not
+   */
   disabled: PropTypes.bool,
+  /**
+   * icon name
+   */
   icon: PropTypes.string,
+  /**
+   * HTML role attribute
+   */
   role: PropTypes.string,
+  /**
+   * HTML type attribue
+   */
   type: PropTypes.oneOf(type),
+  /**
+   * HTML href attribute
+   */
   href: PropTypes.string,
+  /**
+   * True if icon in front else icon at the end
+   */
   iconInFront: PropTypes.bool,
 };
 
 const Button = ({
   children,
   theme,
-  state,
   size,
   borderRadius,
   icon,
@@ -55,26 +94,28 @@ const Button = ({
   });
 
   const position = iconInFront ? 'front' : 'end';
-  console.log(position);
 
-  const icon_comp = <Icon iconName={icon} pos={position} />;
-
-  console.log(classNames);
+  //if the user desires to put an icon
   if (icon) {
+    // if no text/ children is wanted
     if (!children) {
       return (
         <button className={classNames} {...props}>
           <Icon iconName={icon} />
         </button>
       );
-    } else if (position == 'front') {
+    }
+    // if user wants the icon to be in the front
+    else if (position === 'front') {
       return (
         <button className={classNames} {...props}>
           <Icon iconName={icon} pos={position} />
           {children}
         </button>
       );
-    } else {
+    }
+    // else icon at the end
+    else {
       return (
         <button className={classNames} {...props}>
           {children}
@@ -82,7 +123,9 @@ const Button = ({
         </button>
       );
     }
-  } else {
+  }
+  // if no icon, dont include icon attribute
+  else {
     return (
       <button className={classNames} {...props}>
         {children}
@@ -91,6 +134,9 @@ const Button = ({
   }
 };
 
+/**
+ * icon default values
+ */
 Button.defaultProps = {
   iconInFront: false,
   type: 'button',
