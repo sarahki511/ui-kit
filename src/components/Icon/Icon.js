@@ -31,17 +31,27 @@ Component.propTypes = {
    * e.g. size 2 == 200%
    * */
   size: PropTypes.number,
+  // color: PropTypes.string,
 };
 
 /**
  * Icons is a representative of symbol displayed on the screen for better navigation and understanding
  * */
-const Icon = ({ role, iconName, size, description, className, ...pos }) => {
+const Icon = ({
+  role,
+  iconName,
+  size,
+  description,
+  className,
+  color,
+  ...pos
+}) => {
   const classNames = cn(styles.Icon, {
     [styles[`Icon_${iconName}`]]: iconName,
     [styles[`Icon_${className}`]]: className,
     [styles[`Icon_${pos}`]]: pos,
     [styles[`Icon_size`]]: size,
+    // [styles[`Icon_color`]]: color,
   });
 
   return (

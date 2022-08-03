@@ -1,0 +1,34 @@
+@import './../../scss/global';
+
+.List {
+  font-family: $base-font-family;
+  color: $text-color;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  &_unordered,
+  &_ordered,
+  &_unstyled {
+    line-height: 1.6rem;
+    margin-left: 1.5rem;
+    list-style-type: circle;
+    li {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &_element_title {
+    font-weight: 600;
+    margin-right: 3px;
+  }
+  &_ordered {
+    list-style-type: decimal;
+  }
+  &_unstyled {
+    list-style-type: none;
+    li {
+      display: flex;
+    }
+  }
+}

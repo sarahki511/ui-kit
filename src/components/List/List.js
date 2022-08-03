@@ -3,45 +3,52 @@ import styles from './List.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
+const types = ['unstyled', 'unordered', 'ordered'];
+
 Component.propTypes = {
   /**
-   * The children/ content of the component
+   * The children content of the component
+   * Provide List as children
    * */
-  children: PropTypes.string,
+  children: PropTypes.node,
   /**
    * Custom Class names
    * */
   className: PropTypes.string,
   /**
-   * HTML href attribute
+   * Specifies if the list will be unstyled, unordered, ordered
    * */
-  href: PropTypes.string,
-  /**
-   * stylistic choice of text-decoration with underline
-   * */
-  inline: PropTypes.string,
+  type: PropTypes.oneOf(types),
 };
 
 /**
  * List referrences the user to certain data/ document by simple clicking or tapping
  * */
-const List = ({ children, className, href, inline, ...props }) => {
+const List = ({ children, className, type, ...props }) => {
   const classNames = cn(styles.List, {
-    [styles[`List_inline}`]]: inline,
     [styles[`List_${className}`]]: className,
+    [styles[`List_${type}`]]: type,
   });
   return (
-    <a href={href} className={classNames} {...props}>
-      {children}
-    </a>
+    <>
+      {type === 'ordered' ? (
+        <ol className={classNames} {...props}>
+          {children}
+        </ol>
+      ) : (
+        <ul className={classNames} {...props}>
+          {children}
+        </ul>
+      )}
+    </>
   );
 };
 
 /**
- * Defualt value includes a stylistic choice of no text decoration
+ * Defualt value is a list with no style
  * */
 List.defaultProps = {
-  inline: false,
+  type: 'unstyled',
 };
 
 export default List;
