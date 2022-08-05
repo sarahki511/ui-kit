@@ -315,12 +315,18 @@ $half-spacing: $base-spacing/2;
 
 $spacer: 1rem !default;
 $spacers: (
-  'xxs': 0,
-  'xs': $spacer * 0.25,
-  'sm': $spacer * 0.5,
+  '3xs': $spacer * 0.125,
+  '2xs': $spacer * 0.25,
+  'xs': $spacer * 0.5,
+  'sm': $spacer * 0.75,
   'md': $spacer,
   'lg': $spacer * 1.5,
-  'xl': $spacer * 3,
+  'xl': $spacer * 2,
+  '2xl': $spacer * 2.5,
+  '3xl': $spacer * 3,
+  '4xl': $spacer * 4,
+  '5xl': $spacer * 5,
+  '6xl': $spacer * 6,
 ) !default;
 
 // breakpoints

@@ -1,7 +1,62 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;500;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@use 'sass:math';
 // fonts
 $base-font-family: 'Roboto', sans-serif;
-$base-font-size: .875rem;
+$mono-font-family: 'Roboto Mono', monospace;
+$base-font-size: 1rem;
 $base-font-weight: normal;
 $base-line-height: 24px;
+
+@function rem($px) {
+  @return math.div($px, $base-font-size) * 1rem;
+}
+
+@function em($px) {
+  @return math.div($px, $base-font-size) * 1em;
+}
+
+$text-px-scale-map: (
+  '84': rem(84),
+  '72': rem(72),
+  '60': rem(60),
+  '48': rem(48),
+  '36': rem(36),
+  '30': rem(30),
+  '24': rem(24),
+  '18': rem(18),
+  '16': rem(16),
+  '14': rem(14),
+  '10': rem(10),
+);
+
+$text-scale-map: (
+  '4xs': rem(84),
+  '3xs': rem(72),
+  '2xs': rem(60),
+  'xs': rem(48),
+  'sm': rem(36),
+  'md': rem(30),
+  'lg': rem(24),
+  'xl': rem(18),
+  '2xl': rem(16),
+  '3xl': rem(14),
+  '4xl': rem(10),
+);
+
+@mixin font-size-px-to-rem($px-size) {
+  @if map-has-key($text-px-scale-map, $px-size) {
+    font-size: map-get($text-px-scale-map, $px-size);
+  } @else {
+    @warn "The given px does not match the fixed text sizes!";
+  }
+}
+
+@mixin line-height($line-height) {
+  @if $line-height == 'body' {
+    line-height: 1.25;
+  } @else if $line-height == 'heading' {
+    line-height: 1.5;
+  } @else {
+    @warn "The given parameter should be either 'body' or 'heading'.";
+  }
+}
