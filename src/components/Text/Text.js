@@ -4,7 +4,6 @@ import styles from './Text.module.scss';
 import PropTypes from 'prop-types';
 
 const spacings = [
-  '4xs',
   '3xs',
   '2xs',
   'xs',
@@ -15,6 +14,8 @@ const spacings = [
   '2xl',
   '3xl',
   '4xl',
+  '5xl',
+  '6xl',
 ];
 const textTypes = [
   'h1',

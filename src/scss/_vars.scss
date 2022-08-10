@@ -314,19 +314,33 @@ $base-spacing: 20px;
 $half-spacing: $base-spacing/2;
 
 $spacer: 1rem !default;
+
+$spacer-3xs: $spacer * 0.125 !default;
+$spacer-2xs: $spacer * 0.25 !default;
+$spacer-xs: $spacer * 0.5 !default;
+$spacer-sm: $spacer * 0.75 !default;
+$spacer-md: $spacer !default;
+$spacer-lg: $spacer * 1.5 !default;
+$spacer-xl: $spacer * 2 !default;
+$spacer-2xl: $spacer * 2.5 !default;
+$spacer-3xl: $spacer * 3 !default;
+$spacer-4xl: $spacer * 4 !default;
+$spacer-5xl: $spacer * 5 !default;
+$spacer-6xl: $spacer * 6 !default;
+
 $spacers: (
-  '3xs': $spacer * 0.125,
-  '2xs': $spacer * 0.25,
-  'xs': $spacer * 0.5,
-  'sm': $spacer * 0.75,
-  'md': $spacer,
-  'lg': $spacer * 1.5,
-  'xl': $spacer * 2,
-  '2xl': $spacer * 2.5,
-  '3xl': $spacer * 3,
-  '4xl': $spacer * 4,
-  '5xl': $spacer * 5,
-  '6xl': $spacer * 6,
+  '3xs': $spacer-3xs,
+  '2xs': $spacer-2xs,
+  'xs': $spacer-xs,
+  'sm': $spacer-sm,
+  'md': $spacer-md,
+  'lg': $spacer-lg,
+  'xl': $spacer-xl,
+  '2xl': $spacer-2xl,
+  '3xl': $spacer-3xl,
+  '4xl': $spacer-4xl,
+  '5xl': $spacer-5xl,
+  '6xl': $spacer-6xl,
 ) !default;
 
 // breakpoints

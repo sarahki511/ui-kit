@@ -16,17 +16,17 @@ $base-line-height: 24px;
 }
 
 $text-px-scale-map: (
-  '84': rem(84),
-  '72': rem(72),
-  '60': rem(60),
-  '48': rem(48),
-  '36': rem(36),
-  '30': rem(30),
-  '24': rem(24),
-  '18': rem(18),
-  '16': rem(16),
-  '14': rem(14),
-  '10': rem(10),
+  84: rem(84),
+  72: rem(72),
+  60: rem(60),
+  48: rem(48),
+  36: rem(36),
+  30: rem(30),
+  24: rem(24),
+  18: rem(18),
+  16: rem(16),
+  14: rem(14),
+  10: rem(10),
 );
 
 $text-scale-map: (
@@ -47,7 +47,7 @@ $text-scale-map: (
   @if map-has-key($text-px-scale-map, $px-size) {
     font-size: map-get($text-px-scale-map, $px-size);
   } @else {
-    @warn "The given px does not match the fixed text sizes!";
+    @warn "The given px does not match the fixed text sizes [84, 72, 60, 48, 36, 30, 24, 18, 16, 14, 10]!";
   }
 }
 

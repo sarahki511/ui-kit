@@ -1,4 +1,111 @@
 @import './../../scss/global';
 
 .Text {
+  font-family: $base-font-family;
+  font-weight: 400;
+  color: $text-color;
+  &_center {
+    text-align: center;
+  }
+  &_type_h1,
+  &_type_title {
+    font-size: map-get($map: $text-scale-map, $key: '4xl');
+    font-weight: 300;
+    margin-bottom: $spacer-xl;
+    margin-left: -0.058em;
+    @include line-height('heading');
+  }
+  &_type_h2 {
+    font-size: map-get($map: $text-scale-map, $key: '3xl');
+    font-weight: 300;
+    margin-bottom: $spaer-xl;
+    @include line-height('heading');
+  }
+  &_type_h3,
+  &_type_subtitle {
+    font-size: map-get($map: $text-scale-map, $key: 'xl');
+    font-weight: 400;
+    margin-bottom: $spacer-sm;
+    margin-left: -0.058em;
+    text-transform: uppercase;
+    margin-top: $spacer-lg;
+    letter-spacing: 0.05em;
+    color: $secondary;
+    @include line-height('heading');
+  }
+  &_type_h4 {
+    font-size: map-get($map: $text-scale-map, $key: 'lg');
+    @include line-height('heading');
+  }
+  &_type_h5 {
+    font-size: map-get($text-scale-map, $key: 'md');
+    @include line-height('heading');
+  }
+  &_type_h6 {
+    font-size: map-get($text-scale-map, 'sm');
+    @include line-height('heading');
+  }
+
+  &_type_p {
+    margin-top: $spacer-md;
+    @include line-height('body');
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &_type_code {
+    font-family: $mono-font-family;
+    font-size: map-get($text-scale-map, '4xs');
+  }
+  &_type_i {
+    font-style: italic;
+  }
+  &_type_bold,
+  &_type_strong {
+    font-weight: 600;
+  }
+  &_type__sup {
+    font-size: 0.7em;
+    // background: var(--ui-03);
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+
+    > a {
+      text-decoration: none;
+
+      &:before {
+        content: '[';
+      }
+
+      &:after {
+        content: ']';
+      }
+    }
+  }
+  &_type_a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &_type_caption {
+    font-size: map-get($map: $text-scale-map, $key: '5xs');
+    font-weight: 300;
+    color: $secondary;
+  }
+  &_type_inline-highlight {
+    font-weight: 600;
+    display: inline-block;
+    padding: 2px 1px;
+    background-color: $warning;
+  }
+  @each $k, $v in $spacers {
+    &_topSpacing_#{$k} {
+      margin-top: $v;
+    }
+    &_bottomSpacing_#{$k} {
+      margin-bottom: $v;
+    }
+  }
 }
