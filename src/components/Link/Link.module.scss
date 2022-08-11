@@ -1,4 +1,5 @@
 @import './../../scss/global';
+@import './../../scss/reset';
 
 .link-hover {
   text-decoration: underline;
@@ -8,6 +9,7 @@
   color: $primary;
   cursor: pointer;
   text-decoration: none;
+  font-family: $base-font-family;
   &:hover,
   &_link-hover {
     text-decoration: underline;

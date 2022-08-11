@@ -1,54 +1,125 @@
 @import './../../scss/global';
-
+@import './../../scss/typography';
 .Text {
-  font-family: $base-font-family;
+  font-family: $base-font-family !important;
   font-weight: 400;
   color: $text-color;
+  p + h2 {
+    margin-top: $spacer-2xl;
+  }
+
+  ul + h2 {
+    margin-top: $spacer-xl;
+  }
+
+  p + h3 {
+    margin-top: $spacer-2xl;
+  }
+
+  h1 + h2 {
+    margin-top: $spacer-lg;
+  }
+
+  h2 + h3 {
+    margin-top: $spacer-lg;
+  }
+
+  p + ul,
+  h3 + ul,
+  h4 + ul {
+    margin-top: $spacer-md;
+  }
+
+  h3 + p {
+    margin-top: $spacer-sm;
+  }
+
+  button + p {
+    margin-top: $spacer-sm;
+  }
+
+  div + h4,
+  h3 + h4 {
+    margin-top: $spacer-lg;
+  }
+
+  h4 + div {
+    margin-top: $spacer-md;
+  }
+
+  h1 + ul,
+  h2 + ul,
+  h3 + ul,
+  h4 + ul,
+  h5 + ul,
+  h1 + ol,
+  h2 + ol,
+  h3 + ol,
+  h4 + ol,
+  h5 + ol {
+    margin-top: $spacer-md;
+  }
   &_center {
     text-align: center;
   }
-  &_type_h1,
-  &_type_title {
-    font-size: map-get($map: $text-scale-map, $key: '4xl');
-    font-weight: 300;
+  &_type_h1 {
+    font-size: map-get($map: $text-scale-map, $key: 'md');
+    font-weight: 400;
     margin-bottom: $spacer-xl;
     margin-left: -0.058em;
     @include line-height('heading');
   }
   &_type_h2 {
-    font-size: map-get($map: $text-scale-map, $key: '3xl');
-    font-weight: 300;
-    margin-bottom: $spaer-xl;
+    font-size: map-get($map: $text-scale-map, $key: 'sm');
+    font-weight: 400;
+    margin-bottom: $spacer-xl;
     @include line-height('heading');
   }
-  &_type_h3,
-  &_type_subtitle {
-    font-size: map-get($map: $text-scale-map, $key: 'xl');
+  &_type_h3 {
+    font-size: map-get($map: $text-scale-map, $key: 'xs');
     font-weight: 400;
+    margin-bottom: $spacer-sm;
+    margin-left: -0.058em;
+    margin-top: $spacer-lg;
+    letter-spacing: 0.05em;
+    @include line-height('heading');
+  }
+  &_type_h4 {
+    font-size: map-get($map: $text-scale-map, $key: '2xs');
+    @include line-height('heading');
+  }
+  &_type_h5 {
+    font-size: map-get($text-scale-map, $key: '3xs');
+    @include line-height('heading');
+  }
+  &_type_h6 {
+    font-size: map-get($text-scale-map, '4xs');
+    @include line-height('heading');
+  }
+  &_type_title {
+    font-size: map-get($map: $text-scale-map, $key: '2xl');
+    font-weight: 300;
+    margin-bottom: $spacer-xl;
+    margin-left: -0.058em;
+    @include line-height('heading');
+  }
+
+  &_type_subtitle {
+    font-size: map-get($map: $text-scale-map, $key: '4xs');
+    font-weight: 500;
     margin-bottom: $spacer-sm;
     margin-left: -0.058em;
     text-transform: uppercase;
     margin-top: $spacer-lg;
     letter-spacing: 0.05em;
     color: $secondary;
-    @include line-height('heading');
-  }
-  &_type_h4 {
-    font-size: map-get($map: $text-scale-map, $key: 'lg');
-    @include line-height('heading');
-  }
-  &_type_h5 {
-    font-size: map-get($text-scale-map, $key: 'md');
-    @include line-height('heading');
-  }
-  &_type_h6 {
-    font-size: map-get($text-scale-map, 'sm');
-    @include line-height('heading');
+    @include line-height('body');
   }
 
   &_type_p {
     margin-top: $spacer-md;
     @include line-height('body');
+    font-size: map-get($map: $text-scale-map, $key: '3xs');
 
     &:last-child {
       margin-bottom: 0;
@@ -56,18 +127,21 @@
   }
   &_type_code {
     font-family: $mono-font-family;
-    font-size: map-get($text-scale-map, '4xs');
+    font-size: map-get($text-scale-map, '3xs');
   }
   &_type_i {
     font-style: italic;
   }
-  &_type_bold,
   &_type_strong {
-    font-weight: 600;
+    font-weight: 500;
   }
-  &_type__sup {
-    font-size: 0.7em;
-    // background: var(--ui-03);
+  &_type_bold {
+    font-weight: 700;
+  }
+  &_type_sup {
+    font-size: map-get($text-scale-map, '5xs');
+    background-color: $warning-200;
+    display: inline-block;
     vertical-align: top;
     position: relative;
     top: -0.5em;
@@ -90,15 +164,20 @@
     }
   }
   &_type_caption {
-    font-size: map-get($map: $text-scale-map, $key: '5xs');
+    font-size: map-get($map: $text-scale-map, $key: '4xs');
     font-weight: 300;
     color: $secondary;
+    margin: 0.2rem 0 0.5rem 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   &_type_inline-highlight {
-    font-weight: 600;
+    font-weight: 500;
+    font-size: map-get($text-scale-map, '4xs');
     display: inline-block;
     padding: 2px 1px;
-    background-color: $warning;
+    background-color: $warning-200;
   }
   @each $k, $v in $spacers {
     &_topSpacing_#{$k} {

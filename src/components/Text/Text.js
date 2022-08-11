@@ -51,26 +51,27 @@ export const textDict = {
 };
 
 /**
- * Texts is a representative of symbol displayed on the screen for better navigation and understanding
+ * Texts is a used to deliver ideas in paragraph or short phrases.
  * */
 const Text = ({
   children,
   className,
   topSpacing,
   bottomSpacing,
+  center,
   type,
   ...pos
 }) => {
   const textTag = {
     name: textDict[type] ? textDict[type] : textDict['caption'],
   };
-  const classNames = cn(styles.Text, {
+  const classNames = cn(className, styles.Text, {
     [styles[`Text_topSpacing_${topSpacing}`]]: topSpacing,
     [styles[`Text_bottomSpacing_${bottomSpacing}`]]: bottomSpacing,
     [styles[`Text_type_${type}`]]: type,
     [styles[`Text_${className}`]]: className,
+    [styles[`Text_center`]]: center,
   });
-
   return (
     <textTag.name className={classNames} {...pos}>
       {children}
@@ -82,9 +83,8 @@ const Text = ({
  * Default value of Text Component
  * */
 Text.defaultProps = {
-  topSpacing: 'sm',
-  bottomSpacing: 'sm',
-  type: 'caption',
+  type: 'p',
+  center: false,
 };
 
 Text.propTypes = {

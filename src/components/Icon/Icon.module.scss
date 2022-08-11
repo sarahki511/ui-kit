@@ -32,10 +32,12 @@
   -moz-osx-font-smoothing: grayscale;
 
   &_front {
+    margin: 0;
     margin-right: 0.25rem;
   }
 
   &_end {
+    margin: 0;
     margin-left: 0.25rem;
   }
 

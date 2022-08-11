@@ -44,7 +44,8 @@ const Icon = ({
   description,
   className,
   color,
-  ...pos
+  pos,
+  ...prop
 }) => {
   const classNames = cn(styles.Icon, {
     [styles[`Icon_${iconName}`]]: iconName,
@@ -60,7 +61,7 @@ const Icon = ({
       aria-label={description}
       alt={description}
       className={classNames}
-      {...pos}
+      {...prop}
     ></i>
   );
 };

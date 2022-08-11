@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;500;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;500;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 // fonts
 $base-font-family: 'Roboto', sans-serif;
 $mono-font-family: 'Roboto Mono', monospace;
@@ -8,11 +9,11 @@ $base-font-weight: normal;
 $base-line-height: 24px;
 
 @function rem($px) {
-  @return math.div($px, $base-font-size) * 1rem;
+  @return math.div($px, 16) * 1rem;
 }
 
 @function em($px) {
-  @return math.div($px, $base-font-size) * 1em;
+  @return math.div($px, 16) * 1em;
 }
 
 $text-px-scale-map: (
@@ -30,17 +31,17 @@ $text-px-scale-map: (
 );
 
 $text-scale-map: (
-  '4xs': rem(84),
-  '3xs': rem(72),
-  '2xs': rem(60),
-  'xs': rem(48),
-  'sm': rem(36),
-  'md': rem(30),
-  'lg': rem(24),
-  'xl': rem(18),
-  '2xl': rem(16),
-  '3xl': rem(14),
-  '4xl': rem(10),
+  '4xl': rem(84),
+  '3xl': rem(72),
+  '2xl': rem(60),
+  'lg': rem(48),
+  'md': rem(36),
+  'sm': rem(30),
+  'xs': rem(24),
+  '2xs': rem(18),
+  '3xs': rem(16),
+  '4xs': rem(14),
+  '5xs': rem(10),
 );
 
 @mixin font-size-px-to-rem($px-size) {
