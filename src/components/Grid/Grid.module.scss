@@ -1,7 +1,9 @@
+@import './../../scss/global';
+
 $spacing: (
   'sm': 8px,
   'md': 16px,
-  'lg': 24px
+  'lg': 24px,
 );
 
 $breakpoints: (
@@ -10,13 +12,9 @@ $breakpoints: (
   'lg': 1280px,
 );
 
-$justifyContent: (
-  flex-start, flex-end, center, space-between
-);
+$justifyContent: (flex-start, flex-end, center, space-between);
 
-$alignItems: (
-  flex-start, flex-end, center
-);
+$alignItems: (flex-start, flex-end, center);
 
 @mixin breakpoint($name) {
   @media screen and (min-width: map-get($breakpoints, $name)) {

@@ -1,0 +1,21 @@
+@import './../../scss/reset';
+@import './../../scss/global';
+
+.Credits {
+  //@include reset;
+  position: relative;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  > img {
+    width: 100%;
+  }
+
+  &_info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $spacer-md $spacer-md;
+    color: $light;
+    background-color: rgba($dark, 0.2);
+  }
+}

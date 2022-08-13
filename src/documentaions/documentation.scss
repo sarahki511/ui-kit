@@ -12,6 +12,7 @@
   font-weight: normal;
   position: relative;
   margin: 0 12% 0 14%;
+  // justify-content: center;
 
   @media screen and (max-width: 991px) {
     .container {
@@ -36,6 +37,7 @@
     margin-top: 1rem;
     font-weight: 100;
     font-size: 2rem;
+    font-family: $base-font-family;
   }
 
   h1 {

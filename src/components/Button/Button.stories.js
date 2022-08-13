@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from './Button';
-import { withKnobs } from '@storybook/addon-controls';
 
 export default {
   title: 'Components/UI Elements/Button',
@@ -154,18 +153,18 @@ ButtonThemes.args = {
 };
 
 const themesDesc = `
-| Theme | Description |
-| ---- | ----------- |
-| \`primary\` | Name of the resource |
-| \`primary-outline\` | Path to the resource |
-| \`secondary\` | Path to the resource |
-| \`secondary-outline\` | Path to the resource |
-| \`success\` | Path to the resource |
-| \`info\` | Path to the resource |
-| \`warning\` | Path to the resource |
-| \`danger\` | Path to the resource |
-| \`light\` | Path to the resource |
-| \`dark\` | Path to the resource |
+| Theme | Description | Hexcode |
+| ---- | ----------- | ------- |
+| \`primary\` | Main Theme Color | #5583ba |
+| \`primary-outline\` | Main Theme color without fill | #5583ba |
+| \`secondary\` | Secondary color | #898e8c |
+| \`secondary-outline\` | Secondary Color without fill | #898e8c |
+| \`success\` | Color to indicate the process had a positive feedback | #30d5c8 |
+| \`info\` | Color to notify user of additional info | #ffa500 |
+| \`warning\` | Color to catch the user's attention | #f1dd38 |
+| \`danger\` | Color to notify the user that something went wrong (need action) | #d73b3e |
+| \`light\` | Light theme color | #fffff0 |
+| \`dark\` | Dark theme color | #614e6e |
 `;
 
 ButtonThemes.story = {

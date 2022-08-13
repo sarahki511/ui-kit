@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './Grid.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
@@ -15,8 +15,36 @@ const justifyContent = ['flex-start', 'center', 'flex-end', 'space-between'];
  * options to align content vertically
  */
 const alignItems = ['flex-start', 'center', 'flex-end'];
+/**
+ * 3 spacing options
+ */
+const spacing = ['sm', 'md', 'lg'];
 
-Component.propTypes = {
+/**
+ *
+ * Grid createa a responsive layout of the content depending on the screen size/ breakpoints
+ */
+const Grid = (props) => {
+  const classNames = cn(styles.Grid, {
+    [styles.Grid_container]: props.container,
+    [styles.Grid_item]: props.item,
+    [styles[`Grid_xs_${props.xs}`]]: props.xs,
+    [styles[`Grid_sm_${props.sm}`]]: props.sm,
+    [styles[`Grid_md_${props.md}`]]: props.md,
+    [styles[`Grid_lg_${props.lg}`]]: props.lg,
+    [styles[`Grid_spacing_${props.spacing}`]]: props.spacing,
+    [styles[`Grid_justifyContent_${props.justifyContent}`]]:
+      props.justifyContent,
+    [styles[`Grid_alignItems_${props.alignItems}`]]: props.alignItems,
+  });
+  return (
+    <div className={classNames} {...props}>
+      {props.children}
+    </div>
+  );
+};
+
+Grid.propTypes = {
   /**
    * content of grid
    */
@@ -52,7 +80,7 @@ Component.propTypes = {
   /**
    * determine how far apart the items will be from each other
    */
-  spacing: PropTypes.oneOf(['sm', 'md', 'lg']),
+  spacing: PropTypes.oneOf(spacing),
   /**
    * align horizonatally
    */
@@ -61,31 +89,6 @@ Component.propTypes = {
    * align vertically
    */
   alignItems: PropTypes.oneOf(alignItems),
-};
-
-/**
- *
- * @param {*} props
- * @returns div with provided attributes and context
- */
-const Grid = (props) => {
-  const classNames = cn({
-    [styles.Grid_container]: props.container,
-    [styles.Grid_item]: props.item,
-    [styles[`Grid_xs_${props.xs}`]]: props.xs,
-    [styles[`Grid_sm_${props.sm}`]]: props.sm,
-    [styles[`Grid_md_${props.md}`]]: props.md,
-    [styles[`Grid_lg_${props.lg}`]]: props.lg,
-    [styles[`Grid_spacing_${props.spacing}`]]: props.spacing,
-    [styles[`Grid_justifyContent_${props.justifyContent}`]]:
-      props.justifyContent,
-    [styles[`Grid_alignItems_${props.alignItems}`]]: props.alignItems,
-  });
-  return (
-    <div className={classNames} {...props}>
-      {props.children}
-    </div>
-  );
 };
 
 export default Grid;
