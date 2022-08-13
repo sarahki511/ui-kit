@@ -6,25 +6,6 @@ import Icon from '../Icon/Icon';
 
 const types = ['unstyled', 'unordered', 'ordered'];
 
-Component.propTypes = {
-  /**
-   * The children content of the list item
-   * */
-  children: PropTypes.node,
-  /**
-   * Custom Class names
-   * */
-  className: PropTypes.string,
-  /**
-   * Custom iconName to replace bullet points
-   */
-  iconName: PropTypes.string,
-  /**
-   * Specifies the the color of icon (hexcode)
-   */
-  // iconColor: PropTypes.string,
-};
-
 /**
  * List are used to group and specify lists of information
  * */
@@ -44,6 +25,25 @@ const ListItem = ({ children, className, title, iconName, ...props }) => {
       <span className={cn(styles[`List_element_content`])}>{children}</span>
     </li>
   );
+};
+
+ListItem.propTypes = {
+  /**
+   * The children content of the list item
+   * */
+  children: PropTypes.node,
+  /**
+   * Custom Class names
+   * */
+  className: PropTypes.string,
+  /**
+   * Custom iconName to replace bullet points
+   */
+  iconName: PropTypes.string,
+  /**
+   * Specifies the the color of icon (hexcode)
+   */
+  // iconColor: PropTypes.string,
 };
 
 export default ListItem;

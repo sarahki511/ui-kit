@@ -5,22 +5,6 @@ import PropTypes from 'prop-types';
 
 const types = ['unstyled', 'unordered', 'ordered'];
 
-Component.propTypes = {
-  /**
-   * The children content of the component
-   * Provide List as children
-   * */
-  children: PropTypes.node,
-  /**
-   * Custom Class names
-   * */
-  className: PropTypes.string,
-  /**
-   * Specifies if the list will be unstyled, unordered, ordered
-   * */
-  type: PropTypes.oneOf(types),
-};
-
 /**
  * List referrences the user to certain data/ document by simple clicking or tapping
  * */
@@ -49,6 +33,22 @@ const List = ({ children, className, type, ...props }) => {
  * */
 List.defaultProps = {
   type: 'unstyled',
+};
+
+List.propTypes = {
+  /**
+   * The children content of the component
+   * Provide List as children
+   * */
+  children: PropTypes.node,
+  /**
+   * Custom Class names
+   * */
+  className: PropTypes.string,
+  /**
+   * Specifies if the list will be unstyled, unordered, ordered
+   * */
+  type: PropTypes.oneOf(types),
 };
 
 export default List;

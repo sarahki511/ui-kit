@@ -32,49 +32,11 @@ const theme = [
   'dark',
 ];
 
-Component.propTypes = {
-  /**
-   * content of the component
-   */
-  children: PropTypes.string,
-  /**
-   * select of the theme of the button
-   */
-  theme: PropTypes.oneOf(theme),
-  /**
-   * size of the button
-   */
-  size: PropTypes.oneOf(sizes),
-  /**
-   * roundness of button
-   */
-  borderRadius: PropTypes.oneOf(radius),
-  /**
-   * determines wheter the button will be disabled or not
-   */
-  disabled: PropTypes.bool,
-  /**
-   * icon name
-   */
-  icon: PropTypes.string,
-  /**
-   * HTML role attribute
-   */
-  role: PropTypes.string,
-  /**
-   * HTML type attribue
-   */
-  type: PropTypes.oneOf(type),
-  /**
-   * HTML href attribute
-   */
-  href: PropTypes.string,
-  /**
-   * True if icon in front else icon at the end
-   */
-  iconInFront: PropTypes.bool,
-};
-
+/**
+ *
+ * A button conveys a specific call to action, whether it is a submission or payment.
+ * This component will make sure that the user knows exactly what will happen if the user clicks on the button.
+ */
 const Button = ({
   children,
   theme,
@@ -143,6 +105,49 @@ Button.defaultProps = {
   theme: 'primary',
   size: 'md',
   borderRadius: 'md',
+};
+
+Button.propTypes = {
+  /**
+   * content of the component
+   */
+  children: PropTypes.string,
+  /**
+   * select of the theme of the button
+   */
+  theme: PropTypes.oneOf(theme),
+  /**
+   * size of the button
+   */
+  size: PropTypes.oneOf(sizes),
+  /**
+   * roundness of button
+   */
+  borderRadius: PropTypes.oneOf(radius),
+  /**
+   * determines wheter the button will be disabled or not
+   */
+  disabled: PropTypes.bool,
+  /**
+   * icon name
+   */
+  icon: PropTypes.string,
+  /**
+   * HTML role attribute
+   */
+  role: PropTypes.string,
+  /**
+   * HTML type attribue
+   */
+  type: PropTypes.oneOf(type),
+  /**
+   * HTML href attribute
+   */
+  href: PropTypes.string,
+  /**
+   * True if icon in front else icon at the end
+   */
+  iconInFront: PropTypes.bool,
 };
 
 export default Button;

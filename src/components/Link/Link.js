@@ -3,25 +3,6 @@ import styles from './Link.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-Component.propTypes = {
-  /**
-   * The children/ content of the component
-   * */
-  children: PropTypes.string,
-  /**
-   * Custom Class names
-   * */
-  className: PropTypes.string,
-  /**
-   * HTML href attribute
-   * */
-  href: PropTypes.string,
-  /**
-   * stylistic choice of text-decoration with underline
-   * */
-  inline: PropTypes.string,
-};
-
 /**
  * Link referrences the user to certain data/ document by simple clicking or tapping
  * */
@@ -42,6 +23,25 @@ const Link = ({ children, className, href, inline, ...props }) => {
  * */
 Link.defaultProps = {
   inline: false,
+};
+
+Link.propTypes = {
+  /**
+   * The children/ content of the component
+   * */
+  children: PropTypes.string,
+  /**
+   * Custom Class names
+   * */
+  className: PropTypes.string,
+  /**
+   * HTML href attribute
+   * */
+  href: PropTypes.string,
+  /**
+   * stylistic choice of text-decoration with underline
+   * */
+  inline: PropTypes.string,
 };
 
 export default Link;

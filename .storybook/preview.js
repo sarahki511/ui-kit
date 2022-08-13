@@ -11,9 +11,16 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Getting Started', 'Documentation', 'Example', 'Components'],
+      order: [
+        'Getting Started',
+        ['Introduction', 'Credits'],
+        'Documentation',
+        'Example',
+        'Components',
+      ],
     },
   },
+  viewMode: 'docs',
 };
 
 import './reset.css';
