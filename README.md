@@ -2,9 +2,9 @@
 
 This project was carried out with the goal of making a ui kit (like that of bootstarp, materialUI, etc).\
 This User Interface Kit provides you with consistent guidelines,
-components and templates to boost the user experience of your products.\
+components and templates to boost the user experience of your products.
 
-# About
+## About
 
 UI Kit is the best way to unify web design and strengthen brand image.
 This free UI Kit will help you create a unified website using easy to
@@ -13,25 +13,31 @@ This guideline will be used to help users add components to their websites
 or other applications.\
 This UI Kit is made as a personal project. The UX/UI is made with a
 reference to many online guidelines; therefore, this document is not
-made with specific and accurate practice of graphic design.\
+made with specific and accurate practice of graphic design.
 
-# Purpose
+## Purpose
 
 The purpose of this ui kit is to unify the overall image of the website.
 This document will show the users how to use each components to make a
 unifed and accessible website.\
 Personal purpose of this project is to practice and showcase the study of
 React, scss, css, html storybook. Making each user interface into small components
-allow the components easy to manipulate and edit.\
+allow the components easy to manipulate and edit.
 
-# Toolkit
+## Toolkit
 
 Everything that is on the screen is made up of small unified components.
 Starting from typograph to as big as a the entire web page, this ui kit
 allows the website to have a more unified look. \
  Since this is a personal project, there will be a lot of errors and much
 room to improve. Help me improve by sending me a feedback via
-email (sarahki511@yahoo.com) or file an issue on [GitHub](https://github.com/sarahki511/ui-kit").\
+email (sarahki511@yahoo.com) or file an issue on [GitHub](https://github.com/sarahki511/ui-kit").
+
+## Credits
+
+- [The World Food Programme’s (WFP) UI Kit]("https://uikit.wfp.org/docs/index.html?path=/story/getting-started-intro--page")
+- [Bootstrap]("https://getbootstrap.com/")
+- [Material UI]("https://mui.com/")
 
 # Getting Started with Create React App
 
