@@ -21,13 +21,14 @@ The purpose of this ui kit is to unify the overall image of the website.
 This document will show the users how to use each components to make a
 unifed and accessible website.\
 Personal purpose of this project is to practice and showcase the study of
-React, scss, css, html storybook. Making each user interface into small components
-allow the components easy to manipulate and edit.
+React, scss, css, html, and storybook. Making each user interface into small
+components facilitates the process in making the website easy to manipulate
+and edit.
 
 ## Toolkit
 
 Everything that is on the screen is made up of small unified components.
-Starting from typograph to as big as a the entire web page, this ui kit
+Starting from typography to as big as the entire web page, this ui kit
 allows the website to have a more unified look. \
  Since this is a personal project, there will be a lot of errors and much
 room to improve. Help me improve by sending me a feedback via

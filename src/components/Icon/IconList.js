@@ -1,5 +1,7 @@
 import Icon from './Icon';
 import React from 'react';
+import Text from './../Text/Text';
+import './IconStories.scss';
 
 const icons = [
   'home',
@@ -499,17 +501,17 @@ const format = icons.map((e) => (
   <div className="icon-container">
     <div className="icon-wrapper">
       <Icon key={e} iconName={e} />
-      <p style={{ 'font-size': '.6rem' }}>{e}</p>
+      <p className="icon_text">{e}</p>
     </div>
   </div>
 ));
 
 const IconsFormatted = () => {
   return (
-    <div className="container">
-      <h1>List of Icons</h1>
-      {format}
-    </div>
+    <>
+      <Text type="title">List of Icons</Text>
+      <div className="icon-big-container">{format}</div>
+    </>
   );
 };
 

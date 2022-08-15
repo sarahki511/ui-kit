@@ -1,10 +1,29 @@
-.container {
+.icon-big-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.iconWrapper {
-  border: 2px solid black;
+.icon_text {
+  padding-top: 1rem;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.icon-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2%;
+}
+
+.icon-wrapper {
+  box-sizing: border-box;
+  width: 5rem;
+  height: 5rem;
+  flex: 1;
+  padding: 1em;
+  border: 2px solid #898e8c;
   border-radius: 6px;
-  padding: 1rem;
+  // padding: 1rem;
+  text-align: center;
+  overflow-wrap: break-all;
 }

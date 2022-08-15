@@ -104,7 +104,6 @@ export const ButtonWithIcon = (args) => (
       theme="primary-outline"
       borderRadius="md"
       icon="info"
-      pos="front"
     ></Button>{' '}
     <Button
       size="md"

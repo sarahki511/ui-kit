@@ -30,7 +30,7 @@ export default {
     //   description: 'Specify the size of Icon',
     // },
     pos: {
-      control: 'radio',
+      control: 'select',
       options: ['front', 'end', 'none'],
       description:
         'specify if the icon will be in front or end of text (use only if text is involved)',
@@ -46,6 +46,6 @@ export const IconBasic = (args) => (
 
 IconBasic.args = {
   iconName: 'home',
-  // size: 1,
+  size: 1,
   description: 'Icon of a default home',
 };

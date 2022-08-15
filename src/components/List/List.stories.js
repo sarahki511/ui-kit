@@ -24,7 +24,7 @@ export default {
       description: 'Specify the custom class name (optional)',
     },
     type: {
-      control: 'radio',
+      control: 'select',
       options: ['unstyled', 'unordered', 'ordered'],
       description: 'Specify the type of list',
     },
