@@ -4,6 +4,16 @@ This project was carried out with the goal of making a ui kit (like that of boot
 This User Interface Kit provides you with consistent guidelines,
 components and templates to boost the user experience of your products.
 
+## Component Structure and Examples
+
+Each of the components are made up of relatively 3 files:
+
+1. Javascript file using React library
+2. Modular Scss file
+3. storybook jsx to visualize and test components
+
+To see an example of how each components are designed refer to the [Components folder](https://github.com/sarahki511/ui-kit/tree/master/src/components) or see a specific component (e.g. [Button](https://github.com/sarahki511/ui-kit/tree/master/src/components/Button), [Text](https://github.com/sarahki511/ui-kit/tree/master/src/components/Text), [Tag](https://github.com/sarahki511/ui-kit/blob/master/src/components/Tag)).
+
 ## About
 
 UI Kit is the best way to unify web design and strengthen brand image.
@@ -32,13 +42,13 @@ Starting from typography to as big as the entire web page, this ui kit
 allows the website to have a more unified look. \
  Since this is a personal project, there will be a lot of errors and much
 room to improve. Help me improve by sending me a feedback via
-email (sarahki511@yahoo.com) or file an issue on [GitHub](https://github.com/sarahki511/ui-kit").
+email (sarahki511@yahoo.com) or file an issue on [GitHub](https://github.com/sarahki511/ui-kit).
 
 ## Credits
 
-- [The World Food Programme’s (WFP) UI Kit]("https://uikit.wfp.org/docs/index.html?path=/story/getting-started-intro--page")
-- [Bootstrap]("https://getbootstrap.com/")
-- [Material UI]("https://mui.com/")
+- [The World Food Programme’s (WFP) UI Kit](https://uikit.wfp.org/docs/index.html?path=/story/getting-started-intro--page)
+- [Bootstrap](https://getbootstrap.com/)
+- [Material UI](https://mui.com/)
 
 # Getting Started with Create React App
 
