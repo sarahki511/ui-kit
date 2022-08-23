@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './List.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
-
-const types = ['unstyled', 'unordered', 'ordered'];
 
 /**
  * List are used to group and specify lists of information

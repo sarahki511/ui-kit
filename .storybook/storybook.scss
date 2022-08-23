@@ -1,0 +1,13 @@
+@import './../src/scss/global';
+@import './../../scss/typography';
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.sbdocs-title {
+  font-size: map-get($map: $text-scale-map, $key: '2xl');
+  font-weight: 300;
+  margin-bottom: $spacer-xl;
+  margin-left: -0.058em;
+}

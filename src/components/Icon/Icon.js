@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './Icon.module.scss';
 import PropTypes from 'prop-types';

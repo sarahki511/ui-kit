@@ -17,6 +17,8 @@
   white-space: nowrap;
   height: 2.5rem;
   cursor: pointer;
+  transition: all 0.15s;
+  transition-timing-function: ease;
 
   @each $theme, $color in $theme-colors {
     &_#{$theme} {

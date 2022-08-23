@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-controls',
     '@storybook/addon-docs',
+    '@storybook/theming',
   ],
   framework: '@storybook/react',
   core: {

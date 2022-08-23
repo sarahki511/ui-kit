@@ -1,57 +1,46 @@
-@import 'reset';
 @mixin typography {
   strong {
-    //@include reset;
     font-weight: 600;
   }
 
   p {
-    //@include reset;
     @include line-height('body');
     font-weight: 400;
   }
 
   em {
-    //@include reset;
     font-style: italic;
   }
 
   a {
-    //@include reset;
   }
 
   h1 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }
 
   h2 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }
 
   h3 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }
 
   h4 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }
 
   h5 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }
 
   h6 {
-    //@include reset;
     @include line-height('heading');
     font-weight: 600;
   }

@@ -73,12 +73,12 @@ TagTypes.args = {
 const typesDesc = `
 | Type | Description |
 | ---- | ----------- |
-| \`info\` | Fill Tag with primary color |
-| \`danger\` | Primary color border with light fill |
-| \`success\` | Fill Tag with primary color |
-| \`warning\` | Primary color border with light fill |
-| \`light\` | Fill Tag with primary color |
-| \`dark\` | Primary color border with light fill |
+| \`info\` | Fill orange when notifying a non hostile information |
+| \`danger\` | Fill red when notifying errors or invalid inputs |
+| \`success\` | Fill blue when notifying successful transaction |
+| \`warning\` | Fill yellow whne notifying a potentially danger |
+| \`light\` | Fill white when dark theme with neutral tag |
+| \`dark\` | Fill dark when light theme with neutral tag |
 `;
 
 TagTypes.story = {
