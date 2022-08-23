@@ -12,9 +12,6 @@
     font-style: italic;
   }
 
-  a {
-  }
-
   h1 {
     @include line-height('heading');
     font-weight: 600;
