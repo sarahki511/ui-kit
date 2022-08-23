@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './ReadMore.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
@@ -6,10 +6,10 @@ import Icon from '../Icon/Icon';
 import Link from '../Link/Link';
 
 const ReadMoreLink = ({ handleToggleClick, showMore, text }) => {
-  const iconName = showMore ? 'circle-down' : 'circle-up';
-  const size = 10 / 16;
+  const iconName = showMore ? 'circle-up' : 'circle-down';
+  const size = 1;
   return (
-    <Link onClick={handleToggleClick}>
+    <Link style={{ display: 'block' }} onClick={handleToggleClick}>
       {text}
       <Icon
         iconName={iconName}
@@ -35,21 +35,49 @@ const ReadMore = ({
   expankLinkText,
   fade,
   maxCollapsedHeight,
-  scrollIntoView,
-  props,
 }) => {
   const [showMore, setShowMore] = useState(false);
   const [height, setHeight] = useState(0);
-  const handleToggleClick = (e) => {};
+  const readMoreRef = useRef();
+  const handleToggleClick = (e) => {
+    e.preventDefault();
+    const textHeight = readMoreRef.current.clientHeight;
+    console.log(textHeight);
+    setShowMore(!showMore);
+    setHeight(textHeight);
+  };
 
   const classNames = cn(styles.ReadMore, {
-    // [styles[`ReadMore_${theme}`]]: theme,
-    // [styles[`ReadMore_${size}`]]: size,
-    // [styles[`ReadMore_borderRadius_${borderRadius}`]]: borderRadius,
-    // [styles[`ReadMore_disabled`]]: disabled,
-    // [styles[`ReadMore_icon`]]: icon,
+    [styles[`ReadMore_${className}`]]: className,
+    [styles[`ReadMore_fade`]]: fade,
+    [styles[`ReadMore_max_collapsed_height`]]: maxCollapsedHeight,
+    [styles[`ReadMore_expanded`]]: showMore,
   });
-  return <ReadMoreLink handleToggleClick={handleToggleClick} />;
+
+  // if maxCollapsedHeight is not defined by user, there is not maxHeight
+  // if maxCollapsedHeight is defined and the content is collapsed, use user defined values
+  // if maxCollapsedHeight is defined and the content is expanded, use the expanded height + some padding
+  const contentHeight = !maxCollapsedHeight
+    ? { undefined }
+    : !showMore
+    ? { maxHeight: maxCollapsedHeight }
+    : { maxHeight: height + 30 };
+
+  const contentClassNames = cn({
+    [styles.content]: true,
+  });
+  return (
+    <div className={classNames}>
+      <div className={contentClassNames} style={contentHeight}>
+        <div ref={readMoreRef}>{showMore && children}</div>
+      </div>
+      <ReadMoreLink
+        handleToggleClick={handleToggleClick}
+        showMore={showMore}
+        text={showMore ? collapseLinkText : expankLinkText}
+      />
+    </div>
+  );
 };
 
 /**
