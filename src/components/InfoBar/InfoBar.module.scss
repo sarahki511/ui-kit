@@ -1,0 +1,10 @@
+@import './../../scss/global';
+
+.InfoBar {
+  font-family: $base-font-family;
+  background-color: $info;
+  display: flex;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  line-height: 2rem;
+}

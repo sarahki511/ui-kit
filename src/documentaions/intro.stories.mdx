@@ -1,6 +1,7 @@
 import { Meta } from '@storybook/addon-docs';
 import './documentation.scss';
 import Grid from '../components/Grid/Grid';
+import Text from '../components/Text/Text';
 
 <Meta
   title="Getting Started/Introduction"
@@ -8,9 +9,11 @@ import Grid from '../components/Grid/Grid';
 />
 
 <div className="container">
+  <Text type="title" bottomSpacing="3xs">
+    UI Kit
+  </Text>
   <Grid container spacing="xs">
     <Grid item xs={10} sm={6} md={6} lg={5}>
-      <h1>UI KIT</h1>
       <p>
         This User Interface Kit provides you with consistent guidelines,
         components and templates to boost the user experience of your products.
@@ -19,7 +22,10 @@ import Grid from '../components/Grid/Grid';
   </Grid>
   <Grid container spacing="xs">
     <Grid item xs={8} sm={8} md={8} lg={8} justifyContent="center">
-      <h2>About</h2>
+      <Text type="h3" bottomSpacing="3xs">
+        About
+      </Text>
+      <hr />
       <p>
         UI Kit is the best way to unify web design and strengthen brand image.
         This free UI Kit will help you create a unified website using easy to
@@ -36,7 +42,10 @@ import Grid from '../components/Grid/Grid';
       </p>
     </Grid>
     <Grid item xs={8} sm={8} md={8} lg={8}>
-      <h2>Purpose</h2>
+      <Text type="h3" bottomSpacing="3xs">
+        Purpose
+      </Text>
+      <hr />
       <p>
         The purpose of this ui kit is to unify the overall image of the website.
         This document will show the users how to use each components to make a
@@ -50,7 +59,10 @@ import Grid from '../components/Grid/Grid';
       </p>
     </Grid>
     <Grid item xs={8} sm={8} md={8} lg={8}>
-      <h2>Toolkit</h2>
+      <Text type="h3" bottomSpacing="3xs">
+        Toolkit
+      </Text>
+      <hr />
       <p>
         Everything that is on the screen is made up of small unified components.
         Starting from typography to as big as the entire web page, this ui kit
