@@ -9,7 +9,7 @@ const types = ['unstyled', 'unordered', 'ordered'];
  * List referrences the user to certain data/ document by simple clicking or tapping
  * */
 const List = ({ children, className, type, ...props }) => {
-  const classNames = cn(styles.List, {
+  const classNames = cn(className, styles.List, {
     [styles[`List_${className}`]]: className,
     [styles[`List_${type}`]]: type,
   });

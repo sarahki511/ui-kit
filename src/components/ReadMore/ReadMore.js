@@ -49,8 +49,7 @@ const ReadMore = ({
     setHeight(currHeight);
   };
 
-  const classNames = cn(styles.ReadMore, {
-    [styles[`ReadMore_${className}`]]: className,
+  const classNames = cn(className, styles.ReadMore, {
     [styles[`ReadMore_fade`]]: fade && !expanded,
     [styles[`ReadMore_max_collapsed_height`]]: maxCollapsedHeight,
     [styles[`ReadMore_expandeded`]]: expanded,

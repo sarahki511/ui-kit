@@ -51,13 +51,13 @@ ListBasic.args = {
 export const ListWithIcon = (args) => (
   <>
     <List {...args}>
-      <ListItem title={'title'} iconName={'cancel-circle'}>
+      <ListItem title={'title'} iconName={'cross'} iconColor="danger">
         List Item 1
       </ListItem>
-      <ListItem title={'title'} iconName={'cancel-circle'}>
+      <ListItem title={'title'} iconName={'cross'} iconColor="danger">
         List Item 2
       </ListItem>
-      <ListItem title={'title'} iconName={'cancel-circle'}>
+      <ListItem title={'title'} iconName={'cross'} iconColor="danger">
         List Item 3
       </ListItem>
     </List>

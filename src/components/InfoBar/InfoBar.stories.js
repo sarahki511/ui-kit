@@ -13,8 +13,8 @@ export default {
 
 export const InfoBarBasic = (args) => (
   <InfoBar {...args}>
-    Information Bar. <Link href="#">Click Here</Link> Use with Link component
-    for more Information
+    Info: <Link href="#">Click Here</Link> Use with Link component for more
+    Information
   </InfoBar>
 );
 

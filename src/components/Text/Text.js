@@ -69,9 +69,9 @@ const Text = ({
     [styles[`Text_topSpacing_${topSpacing}`]]: topSpacing,
     [styles[`Text_bottomSpacing_${bottomSpacing}`]]: bottomSpacing,
     [styles[`Text_type_${type}`]]: type,
-    [styles[`Text_${className}`]]: className,
     [styles[`Text_center`]]: center,
   });
+  console.log(className);
   return (
     <textTag.name className={classNames} {...pos}>
       {children}
@@ -95,7 +95,7 @@ Text.propTypes = {
   /**
    * Custom Class Name
    * */
-  className: PropTypes.string,
+  className: PropTypes.node,
   /**
    * Specify the top spacings of the text
    * */

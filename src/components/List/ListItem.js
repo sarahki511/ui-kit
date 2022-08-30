@@ -7,7 +7,14 @@ import Icon from '../Icon/Icon';
 /**
  * List are used to group and specify lists of information
  * */
-const ListItem = ({ children, className, title, iconName, ...props }) => {
+const ListItem = ({
+  children,
+  className,
+  title,
+  iconName,
+  iconColor,
+  ...props
+}) => {
   const classNames = cn(styles[`List_list_item`]);
   return (
     <li className={classNames} {...props}>
@@ -15,6 +22,7 @@ const ListItem = ({ children, className, title, iconName, ...props }) => {
         <Icon
           style={{ 'line-height': '1.6rem', 'margin-right': '3px' }}
           iconName={iconName}
+          color={iconColor}
         ></Icon>
       )}
       {title && (
@@ -41,7 +49,7 @@ ListItem.propTypes = {
   /**
    * Specifies the the color of icon (hexcode)
    */
-  // iconColor: PropTypes.string,
+  iconColor: PropTypes.string,
 };
 
 export default ListItem;

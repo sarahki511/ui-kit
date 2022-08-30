@@ -7,9 +7,8 @@ import PropTypes from 'prop-types';
  * Link referrences the user to certain data/ document by simple clicking or tapping
  * */
 const Link = ({ children, className, href, inline, ...props }) => {
-  const classNames = cn(styles.Link, {
+  const classNames = cn(className, styles.Link, {
     [styles[`Link_inline}`]]: inline,
-    [styles[`Link_${className}`]]: className,
   });
   return (
     <a href={href} className={classNames} {...props}>

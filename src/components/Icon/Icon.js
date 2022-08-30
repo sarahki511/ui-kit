@@ -30,9 +30,8 @@ const Icon = ({
   pos,
   ...prop
 }) => {
-  const classNames = cn(styles.Icon, {
+  const classNames = cn(styles.Icon, className, {
     [styles[`Icon_${iconName}`]]: iconName,
-    [styles[`Icon_${className}`]]: className,
     [styles[`Icon_${pos}`]]: pos,
     [styles[`Icon_color_${color}`]]: color,
   });

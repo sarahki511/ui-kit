@@ -12,8 +12,8 @@ const type = ['info', 'danger', 'success', 'warning', 'light', 'dark'];
  *
  * Tag is a short piece of phrase that conveys what the overall web page or documentation is.
  */
-const Tag = ({ children, type, wrap, ...props }) => {
-  const classNames = cn(styles.Tag, {
+const Tag = ({ children, className, type, wrap, ...props }) => {
+  const classNames = cn(className, styles.Tag, {
     [styles[`Tag_${type}`]]: type,
     [styles[`Tag_wrap}`]]: wrap,
   });
@@ -36,6 +36,10 @@ Tag.propTypes = {
    * Content of the tag
    */
   children: PropTypes.string,
+  /**
+   * Optional Custom Class Names
+   */
+  className: PropTypes.string,
   /**
    * Design of tag
    */

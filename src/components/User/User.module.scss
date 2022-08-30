@@ -1,0 +1,67 @@
+@import './../../scss/global';
+
+.User {
+  display: flex;
+  align-items: center;
+  font-family: $base-font-family;
+  color: $text-color;
+  &_img {
+    width: map-get($map: $text-px-scale-map, $key: 30);
+    height: map-get($map: $text-px-scale-map, $key: 30);
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    margin-right: map-get($map: $text-px-scale-map, $key: 10);
+    overflow: hidden;
+    background-color: $dark-400;
+    justify-content: center;
+    align-items: center;
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    > i {
+      top: 4px;
+      border: 2px solid $dark-400;
+    }
+  }
+  &_img_with_desc {
+    width: map-get($map: $text-px-scale-map, $key: 60);
+    height: map-get($map: $text-px-scale-map, $key: 60);
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    margin-right: map-get($map: $text-px-scale-map, $key: 10);
+    overflow: hidden;
+    background-color: $dark-400;
+    justify-content: center;
+    align-items: center;
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    > i {
+      top: 4px;
+      border: 2px solid $dark-400;
+    }
+  }
+  &_description {
+    font-size: map-get($map: $text-px-scale-map, $key: 16);
+    line-height: 1.6rem;
+  }
+  &_extended_description {
+    font-size: map-get($map: $text-px-scale-map, $key: 14);
+    justify-content: flex-start;
+    position: relative;
+  }
+  &_name {
+    font-size: map-get($map: $text-px-scale-map, $key: 16);
+    line-height: 1.6rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

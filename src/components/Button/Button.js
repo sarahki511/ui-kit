@@ -39,6 +39,7 @@ const theme = [
  */
 const Button = ({
   children,
+  className,
   theme,
   size,
   borderRadius,
@@ -46,15 +47,19 @@ const Button = ({
   disabled,
   iconInFront,
   props,
+  onClick,
+  href,
 }) => {
-  const classNames = cn(styles.Button, {
+  const classNames = cn(styles.Button, className, {
     [styles[`Button_${theme}`]]: theme,
     [styles[`Button_${size}`]]: size,
     [styles[`Button_borderRadius_${borderRadius}`]]: borderRadius,
     [styles[`Button_disabled`]]: disabled,
     [styles[`Button_icon`]]: icon,
   });
-
+  const tag = {
+    name: href ? 'a' : 'button',
+  };
   const position = iconInFront ? 'front' : 'end';
 
   //if the user desires to put an icon
@@ -62,36 +67,36 @@ const Button = ({
     // if no text/ children is wanted
     if (!children) {
       return (
-        <button className={classNames} {...props}>
+        <tag.name onClick={onClick} className={classNames} {...props}>
           <Icon iconName={icon} />
-        </button>
+        </tag.name>
       );
     }
     // if user wants the icon to be in the front
     else if (position === 'front') {
       return (
-        <button className={classNames} {...props}>
+        <tag.name onClick={onClick} className={classNames} {...props}>
           <Icon iconName={icon} pos={position} />
           {children}
-        </button>
+        </tag.name>
       );
     }
     // else icon at the end
     else {
       return (
-        <button className={classNames} {...props}>
+        <tag.name onClick={onClick} className={classNames} {...props}>
           {children}
           <Icon iconName={icon} pos={position} />
-        </button>
+        </tag.name>
       );
     }
   }
   // if no icon, dont include icon attribute
   else {
     return (
-      <button className={classNames} {...props}>
+      <tag.name onClick={onClick} className={classNames} {...props}>
         {children}
-      </button>
+      </tag.name>
     );
   }
 };
@@ -112,6 +117,10 @@ Button.propTypes = {
    * content of the component
    */
   children: PropTypes.string,
+  /**
+   * Custom Optional ClassName
+   */
+  className: PropTypes.string,
   /**
    * select of the theme of the button
    */
@@ -141,13 +150,18 @@ Button.propTypes = {
    */
   type: PropTypes.oneOf(type),
   /**
-   * HTML href attribute
-   */
-  href: PropTypes.string,
-  /**
    * True if icon in front else icon at the end
    */
   iconInFront: PropTypes.bool,
+  /**
+   * Function that will execute when the button is clicked
+   */
+  onClick: PropTypes.func,
+  /**
+   * Option to make the button transfer to some link.
+   * Having a href will make the button to become an anchor (a) tag
+   */
+  href: PropTypes.string,
 };
 
 export default Button;
